@@ -15,7 +15,7 @@ This will launch a browser.
 When you modify a file in the [notebooks](notebooks) directory, the file will
 load in the browser.
 
-This will trigger a load:
+You can use the `touch` command to trigger clerk to loading a notebook in the browser.
 
 ```
 $ touch notebooks/ch1.clj
