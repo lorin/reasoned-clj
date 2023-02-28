@@ -1,7 +1,8 @@
 (ns reasoned
-  (:require [clojure.test :refer [is with-test run-tests]])
-  (:import (java.time ZonedDateTime ZoneId)))
+  (:require [nextjournal.clerk :as clerk]))
+
   
 (defn -main
   []
-  (println "hello world"))
+  (clerk/serve! {:browse? true})
+  )
