@@ -1,1 +1,2 @@
-{:deps {midje/midje {:mvn/version "1.10.5"}}}
+{:deps {io.github.nextjournal/clerk {:mvn/version "0.12.707"}
+        org.clojure/core.logic {:mvn/version "1.0.1"}}}
