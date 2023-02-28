@@ -4,7 +4,7 @@ Exercsies from [The Reasoned Schemer][1] using Clojure's [core.logic][2] and the
 
 ## How to run
 
-Run the following command (or use [just][4] to run the provided justfile):
+Run the following command (or use [just][4] to run the provided [justfile](justfile)):
 
 ```
 $ clj -M -m reasoned
