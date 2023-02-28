@@ -9,9 +9,9 @@
    '{:linters {:unresolved-symbol {:level :off}
                :type-mismatch {:level :off}}}} 
   (:refer-clojure :exclude [==])
-  (:require [clojure.core.logic :refer [s# u# == run* fresh conde]]))
+  (:require [clojure.core.logic :refer [s# u# == run run* fresh conde]]))
 
-;; succeed is `s#` instead of `#s`
+;; succeed is `s#` instead of `#s`. 
 s#
 
 ;; fail is `u#` instead of `#u`
@@ -19,6 +19,7 @@ u#
 
 ;; When a goal fails, the result is `()`
 (run* [q] u#)
+ 
 
 ;; The result here should be `(true)`
 (run* [q]
@@ -145,6 +146,9 @@ u#
              (== true x)))
 
 
+;; `conde` does an *or* of each vector argument.
+;; Within each vector, it does an *and*.
+
 (conde
   [u# s#]
   [s# u#])
@@ -157,16 +161,21 @@ u#
 ; `(olive oil)`
 (run* [x]
       (conde
-        [(== 'olive x) s#]
-        [(== 'oil x) s#]))
+        [(== 'olive x)]
+        [(== 'oil x)]))
 
 ; ## The Law of conde
 ; To get more values from conde, pretend that the successful conde line has
 ; failed, refreshing all variables that got an association from that line.
 
- 
+(run 1 [x] 
+     (conde 
+      [(== 'olive x)]
+      [(== 'oil x)]))
 
-;(run1 [x]
-;      (conde
-;       [(== 'olive x) s#]
-;       [(== 'oil x) s#]))
+(run* [r]
+      (fresh [x y]
+             (conde 
+               [(== 'split x) (== 'pea y)]
+               [(== 'navy x) (== 'bean y)])
+             (== (cons x (cons y ())) r)))
