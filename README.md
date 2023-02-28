@@ -1,6 +1,6 @@
 # Reasoned Schemer with Clojure and Clerk
 
-Exercsies from [The Reseaoned Schemer][1] using Clojure's [core.logic][2] and the [Clerk][3] notebook library.
+Exercsies from [The Reasoned Schemer][1] using Clojure's [core.logic][2] and the [Clerk][3] notebook library.
 
 ## How to run
 
