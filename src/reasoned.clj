@@ -4,5 +4,5 @@
   
 (defn -main
   []
-  (clerk/serve! {:browse? true})
+  (clerk/serve! {:watch-paths ["notebooks"], :browse? true})
   )
