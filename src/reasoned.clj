@@ -2,7 +2,6 @@
   (:require [nextjournal.clerk :as clerk]))
 
   
-(defn -main
-  []
+(defn -main []
   (clerk/serve! {:watch-paths ["notebooks"], :browse? true})
   )
